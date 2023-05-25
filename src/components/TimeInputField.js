@@ -7,8 +7,8 @@ function TimeInputField({ value, onChange, label, id }) {
     };
   
     return (
-        <div className="text-center w-11/12 flex justify-start items-center mt-3">
-            <label for={id} className="text-gray-300 text-xl w-1/2">{label}</label>
+        <div className="text-center w-11/12 flex justify-start items-center mt-4 mb-4">
+            <label htmlFor={id} className="text-gray-300 text-xl w-1/2">{label}</label>
             <input
             id={id}
             type="time"
