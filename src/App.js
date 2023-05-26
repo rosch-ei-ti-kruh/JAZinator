@@ -67,7 +67,11 @@ function calcTime(times) {
   let workH = parseInt(workEnd[0]) - parseInt(workBegin[0])
   let workM = parseInt(workEnd[1]) - parseInt(workBegin[1])
   let workDuration = workH * 60 + workM - lunchDuration
-  let workDurationStr = String(parseInt(workDuration / 60)).padStart(2, "0") + ":" + String(parseInt(workDuration % 60)).padStart(2, "0")
+  let workDurationStr = ""
+  if(workDuration < 0) {
+    workDurationStr = workDurationStr + "-"
+  }
+  workDurationStr = String(parseInt(workDuration / 60)).replace("-", "").padStart(2, "0") + ":" + String(parseInt(workDuration % 60)).replace("-", "").padStart(2, "0")
 
   let jazType = "+"
   let jazTime = workDuration - (480)
